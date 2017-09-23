@@ -1,0 +1,130 @@
+body{
+	background-color:black;
+	overflow:auto;
+}
+
+.all_numbers{
+	display:block;
+	font-size: 16px;
+	margin: auto;
+	color:black;
+	width: 95em;
+	height:26em;
+	padding-top: 6em;
+	padding-bottom: 14em;
+	padding-left:1em;
+	padding-right: 1em;
+	background-image: url("backblue.jpg");
+	background-size:cover;
+}
+
+.titles{
+	font-size: 30px;
+	color:white;
+	padding-bottom: 0.5em;
+	
+}
+
+.input_left{
+	display: block;
+	margin-right:5%;
+	float:left;
+	width: 640px;
+	height:550px;
+	padding:5px;
+	padding-top:1%;
+	font-size:20px;
+	background-color:black;
+	color: white;
+	opacity: 0.8;
+	
+}
+
+.input_center{
+	display: block;
+	white-space:nowrap;
+	margin-left:42em;
+	width: 200px;
+	height: 510px;
+	padding-top: 3%;
+	padding-right:5%;
+	padding-bottom:1%;
+	padding-left:3%;
+	background-color: white;
+	opacity: 0.8;
+
+}
+
+.line {
+	border-top: 1px solid;
+	color: black;
+	width: 200px;
+	padding-left:1em;
+}
+
+.input_right{
+	position:absolute;
+	display:block;
+	left:66em;
+	top: 9.5em;
+	width: 425px;	
+	height: 505px;
+	background-color: black;
+	color: white;
+	padding: 2%;
+	padding-left: 3%;
+	opacity: 0.8;
+ }
+
+.top{
+	left: 0px;
+	top:0px;
+	width: 100%;
+	height: 80px;
+	background-color: black;
+	opacity: 0.9;
+	position: fixed;
+	font-family: Arial;
+	font-size: 72px;
+	color: white;
+	white-space: nowrap;
+	overflow: hidden;
+	
+}
+
+.backbutton{
+	position:absolute;
+	font-size: 15px;
+	bottom:18px;
+	font-family: Arial;
+	background-color: #c3c1cc;
+	color: black;
+	left: 80px;	
+}
+
+.builders{
+	position:absolute;
+	color: white;
+	font-family: Arial;
+	bottom: 2px;
+	display:incline;
+	left: 15em;
+	white-space:nowrap;
+}
+a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+	
+a:hover {
+	color: red;
+}
+
+.bottom{
+	position:fixed;
+	left: 0%;
+	bottom: 0%;
+	width: 100%;
+	height: 55px;
+	background-color: black;
+}
