@@ -1,0 +1,163 @@
+<html>
+<title> Car Calculator </title>
+
+	<link rel="stylesheet" type="text/css" href="stylecar.css">
+
+<head>
+		<meta charset= "UTF-8">
+</head>
+
+<script>
+
+function totalCost(){
+
+	//---------Input Calculations-----------//
+
+	var purchase_price = document.getElementById('purchase_price').value;
+	var unusual_repair = document.getElementById('unusual_repair').value;
+	
+		var total_cost = (+purchase_price + +unusual_repair).toFixed(2);
+	
+	var years_owned = document.getElementById('years_owned').value;
+	var months_owned = document.getElementById('months_owned').value;
+	var total_owned = ((12 * +years_owned) + +months_owned);
+	var sold_price = document.getElementById('sold_price').value;
+		var total_loss = (+total_cost - +sold_price).toFixed(2);
+	
+	var yearly_cost = ((+total_loss / +total_owned) * 12).toFixed(2);
+		if (isNaN(yearly_cost)){
+		yearly_cost = (0).toFixed(2);
+	}
+	var monthly_cost = (+total_loss / +total_owned).toFixed(2);
+		if(isNaN(monthly_cost))	{
+		monthly_cost = (0).toFixed(2);
+	}
+	
+	
+	total_cost = total_cost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById('total_cost').innerHTML = "Total Cost $"+total_cost;	
+		
+	total_loss = total_loss.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById('total_loss').innerHTML = "Total Loss $"+total_loss;
+	
+	yearly_cost = yearly_cost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById('yearly_cost').innerHTML = "Total Yearly Cost $" +yearly_cost;
+	
+	monthly_cost = monthly_cost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById('monthly_cost').innerHTML = "Total Monthly Cost $"+monthly_cost;
+
+	
+}
+
+
+</script>
+<body onload = "totalCost()">	
+	
+
+	<div class= "top"> 
+		<center>Vehicle Analysis<center>
+	</div>
+
+<div class= "all_numbers">	
+
+	<div class= "titles"><center>&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+		&#160;&#160;&#160;  New Car Analytics &#160;&#160;&#160;&#160;&#160;
+		&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 
+		&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+		&#160; Purchase Analyzer &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+		&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+		&#160;&#160;&#160;&#160;&#160; Used Car Analytics &#160;</center></div>
+
+	<div class= "input_left">	
+	
+			<p><center><u>Kelly Blue Book 2016 - 2017 Statistics</u></center></p>
+			
+			<!-- https://www.kbb.com/car-news/all-the-latest/new-car-and-suv-buyers-guides/2000011533/ -->
+			
+			<p><center>Average ownership of new vehicles are 6 years </center></p>
+			<p><center> Average depreciation in the first 6 years is 65% </center></p>
+			
+			<p><center> Vehicle &#160;&#160;&#160;&#160;&#160;&#160;Average Price 
+			&#160;&#160;&#160;&#160; Depreciation &#160;&#160;&#160; 
+			Yearly cost &#160;&#160;&#160; Monthly Cost</Center></p>
+			
+				<p><Center>2017 Car &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+				&#160;&#160;&#160;$22,500 &#160;&#160;&#160;&#160;&#160;&#160;&#160; $14,625 &#160;
+				&#160;&#160;&#160;&#160;&#160;&#160; $2,437.50 &#160;&#160;&#160;&#160;&#160;
+				&#160;&#160;&#160;&#160; $203.13 &#160;&#160;&#160;</center></p>
+			
+				<p><center>2017 Suv/Van &#160;&#160;&#160; $33,300 &#160;&#160;&#160;&#160;
+				&#160;&#160;&#160;&#160;$21,645 &#160;&#160;&#160;&#160;&#160;
+				&#160;&#160;&#160;$3,607.50 &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+				&#160;&#160; $300.63&#160;&#160;&#160;&#160;</center></p>
+			
+				<p><center>2017 Truck &#160;&#160;&#160;&#160;&#160;&#160;&#160; $41,000 &#160;&#160;&#160;
+				&#160;&#160;&#160;&#160; $26,650 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; $4,441.67 
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; $370.14&#160;&#160;&#160;&#160;</center><p>
+			
+			<center><img src= "newCar.jpg" style= "width:410px;height:200px;"></center>
+	
+					
+		
+	</div>
+	
+	<div class= "input_center">
+		
+		<p>Purchase Price: $<input id="purchase_price" type="number" min="1" max="1000000" onchange="totalCost()"></p>
+		<p>Unusual Repair: $<input id="unusual_repair" type="number" min="1" max="10000" onchange="totalCost()"></p>
+			<h3 id="total_cost"></h3>
+		
+		<p>Years Owned: <input id="years_owned" type="number" min="0" max="240" onchange="totalCost()"></p>
+		<p>Months Owned: <input id="months_owned" type= "number" min="0" max="11" onchange="totalCost()"></p>
+		<p>Sold Price: $<input id="sold_price" type="number" min="1" max="100000" onchange="totalCost()"></p>
+			
+			<h3 id= "total_loss"></h3>
+				<div class="line"> </div>
+				<br></br>
+			<h3 id= "yearly_cost" ></h3>
+			<h3 id= "monthly_cost" ></h3>
+		<b></b>	
+	</div>	
+	
+	<div class= "input_right">
+	
+		<p><center><u>Consumer Reports</u></center></p>
+		
+			<p> * Average life of a vehicle - $200,000 miles. </p>
+	
+			<p> * Average age of vehicles today - 11.4 years old. </p>
+		
+			<p>* Average number of miles driven - 12,000 mile per year.
+			&#160;&#160;&#160;&#160;&#160; </p>
+			
+			<br></br>			
+			
+			<img src= "carGraph.jpg" style= "width:410px;height:270px;">
+			
+		<!-- https://www.consumerreports.org/car-repair-maintenance/make-your-car-last-200-000-miles/ -->
+
+	
+	
+	</div>
+	
+</div>	
+
+</body>
+	<div class= "bottom"> 
+		<!--	Contributions	-->
+		
+		<form action= "https://finance-analyzation.github.io/homepage/">
+			
+			<button class= "backbutton"><strong>Home Page<strong></button>
+			
+		</form>
+		
+	<div class= "builders">
+		<h5><a href="https://www.linkedin.com/in/nathan-lovero-740099a0/"> Nathan Lovero </a>- Project Manager &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+			<a href="https://www.linkedin.com/in/swanson-joshua/"> Joshua Swanson </a> - Product Controller &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+			<a href="https://www.facebook.com/altpainting/"> Caitie Kern </a> - Artist </h5>
+	</div>	
+	
+	
+	</div>
+</html>
