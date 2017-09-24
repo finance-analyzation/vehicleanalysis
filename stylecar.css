@@ -29,7 +29,7 @@ body{
 	display: block;
 	margin-right:5%;
 	float:left;
-	width: 650px;
+	width: 655px;
 	height:550px;
 	padding:5px;
 	padding-top:1%;
@@ -43,7 +43,7 @@ body{
 .input_center{
 	display: block;
 	white-space:nowrap;
-	margin-left:42em;
+	margin-left:44em;
 	width: 200px;
 	height: 510px;
 	padding-top: 3%;
