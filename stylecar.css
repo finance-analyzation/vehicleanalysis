@@ -65,7 +65,8 @@ body{
 .input_right{
 	position:absolute;
 	display:block;
-	left:66em;
+	left:73em;
+	Right:3em;
 	top: 9.5em;
 	width: 25em;	
 	height: 505px;
